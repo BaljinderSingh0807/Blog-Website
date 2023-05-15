@@ -1,0 +1,20 @@
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+
+<p><%= startingContentOfHome %></p>
+
+<% let length = 100; %>
+<% let myString; %>
+
+<% for(let i = 0; i < newPost.length; i++) { %>
+
+   <% myString = newPost[i].postBody; %>
+   <% myTruncatedString = myString.substring(0, length); %>
+
+    <h1><%= newPost[i].postTitle %></h1>
+    <p><%= myTruncatedString %>...<a href="/posts/<%= newPost[i].postTitle %>"> Read More</a></p>
+
+<% } %>
+
+<%- include("partials/footer") -%>
